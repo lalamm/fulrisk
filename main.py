@@ -1,11 +1,23 @@
 import argparse
-
 from performance.FakePerformance import FakePerformance
-from report import STANDARD_REPORT,run_report
+from report import STANDARD_REPORT, run_report
 
 def main():
+    """
+    Main function for portfolio risk reporting.
+
+    Parses command-line arguments to fetch portfolio and benchmark performance data,
+    optionally including metadata, and runs a standard report.
+
+    Command-line Arguments:
+    -p, --portfolio   Name of the portfolio.
+    -b, --benchmark   Name of the benchmark.
+    -a, --about       About the portfolio (optional).
+
+    Returns:
+    None
+    """
     parser = argparse.ArgumentParser(description='Portfolio risk reporting')
-    # Add the arguments
     parser.add_argument(
         '-p', '--portfolio',
         type=str,
@@ -31,10 +43,12 @@ def main():
     perf = FakePerformance()
     por_perf = perf.fetch_portfolio_performance(portfolio_name)
     bench_perf = perf.fetch_portfolio_performance(benchmark_name)
+
     metadata = {}
     if args.about:
-        metadata["about"] =args.about
-    run_report(STANDARD_REPORT,por_perf,bench_perf,metadata)
+        metadata["about"] = args.about
 
+    run_report(STANDARD_REPORT, por_perf, bench_perf, metadata)
 
-main()
+if __name__ == "__main__":
+    main()
