@@ -67,4 +67,4 @@ The generated portfolio risk report will be saved as `report.html` in the projec
 
 
 Example report
-[Report](https://github.com/lalamm/fulrisk/blob/main/report.html)
+![Report](./report.png)
