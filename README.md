@@ -64,3 +64,7 @@ The generated portfolio risk report will be saved as `report.html` in the projec
 - Performance plot: Shows the cumulative returns of the portfolio over time.
 - Active performance plot: Compares the performance of the portfolio against the benchmark (if provided).
 - Performance table: Presents key performance metrics, such as returns, risk, Sharpe ratio, and tracking error (if benchmark is provided).
+
+
+Example report
+[Report](https://github.com/lalamm/fulrisk/report.html)
